@@ -1,11 +1,11 @@
-def iterative_bs(array, x, low, high):
+def iterative_bs(input_arr, target, low, high):
     while low <= high:
         mid = low + (high - low) // 2
-        if array[mid] == x:
+        if input_arr[mid] == target:
             return mid
-        elif array[mid] < x:
+        elif input_arr[mid] < target:
             low = mid + 1
-        elif array[mid] > x:
+        elif input_arr[mid] > target:
             high = mid - 1
 
     return -1
@@ -14,9 +14,9 @@ def iterative_bs(array, x, low, high):
 array = [3, 4, 5, 6, 7, 8, 9]
 x = 4
 
-result = iterative_bs(array, x, 0, len(array)-1)
+target_idx = iterative_bs(array, x, 0, len(array)-1)
 
-if result != -1:
-    print("Element is present at index " + str(result))
+if target_idx != -1:
+    print("Element is present at index " + str(target_idx))
 else:
     print("Not found")
