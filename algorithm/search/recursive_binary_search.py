@@ -1,12 +1,12 @@
-def recursive_bs(array, x, low, high):
+def recursive_bs(input_arr, x, low, high):
     if high >= low:
         mid = low + (high - low) // 2
-        if array[mid] == x:
+        if input_arr[mid] == x:
             return mid
-        elif array[mid] > x:
-            return recursive_bs(array, x, low, mid - 1)
-        elif array[mid] < x:
-            return recursive_bs(array, x, mid + 1, high)
+        elif input_arr[mid] > x:
+            return recursive_bs(input_arr, x, low, mid - 1)
+        elif input_arr[mid] < x:
+            return recursive_bs(input_arr, x, mid + 1, high)
     else:
         return -1
 
