@@ -36,6 +36,6 @@ def solution(line):
     for row in range(min_x, max_x + 1):
         for col in range(min_y, max_y + 1):
             if (row, col) in star_points:
-                grid[max_y - col][abs(min_x - row)] = "*"
+                grid[max_y - col][row - min_x] = "*"
 
     return [reduce(lambda acc, cur: acc + cur, line, "") for line in grid]
