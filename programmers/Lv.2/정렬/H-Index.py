@@ -1,7 +1,9 @@
 def solution(citations):
-    citations.sort()
+    num_papers = len(citations)
     h_list = []
-    n = len(citations)
-    for i, item in enumerate(citations):
-        h_list.append(min(n-i, item))
+    citations.sort()
+
+    for idx, citation in enumerate(citations):
+        h_list.append(min(num_papers - idx, citation))
+
     return max(h_list)
