@@ -1,11 +1,11 @@
-def special_mergeSort(alist):
+def merge_sort(alist):
     if len(alist) > 1:
         mid = len(alist) // 2
         left_list = alist[:mid]
         right_list = alist[mid:]
 
-        special_mergeSort(left_list)
-        special_mergeSort(right_list)
+        merge_sort(left_list)
+        merge_sort(right_list)
 
         i = 0
         j = 0
@@ -37,7 +37,7 @@ def special_mergeSort(alist):
 
 
 def solution(numbers):
-    answer_list = special_mergeSort(sorted(numbers))
+    answer_list = merge_sort(sorted(numbers))
     answer_list.reverse()
     answer = ""
     for i in answer_list:
