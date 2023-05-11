@@ -1,7 +1,7 @@
 from functools import reduce
 
 
-def check_visitable(cur_word, tar_word):
+def check_is_visitable(cur_word, tar_word):
     identical_char_cnt = reduce(lambda acc, cur: acc + int(cur[0] == cur[1]), zip(cur_word, tar_word), 0)
     if identical_char_cnt == len(cur_word) - 1:
         return True
@@ -14,7 +14,7 @@ def dfs(current, target, words, visit, temp, cnt):
 
     for i in range(len(words)):
         if not visit[i]:
-            if check_visitable(current, words[i]):
+            if check_is_visitable(current, words[i]):
                 visit[i] = 1
                 dfs(words[i], target, words, visit, temp, cnt + 1)
                 visit[i] = 0
